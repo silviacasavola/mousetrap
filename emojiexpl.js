@@ -2,8 +2,9 @@ function startheart () {
 var flyingMen = [];
 var text = "💔";
 var button = document.getElementById('g15');
-var fsize = "56";
+var fsize = "48";
 var windowheight = document.documentElement.clientHeight;
+var windowwidth = document.documentElement.clientWidth;
 
 //emoji object
   function emoji(face, startx, starty, flour, fs, flyUpMax) {
@@ -13,7 +14,7 @@ var windowheight = document.documentElement.clientHeight;
     this.y = starty;
     this.flourLevel = windowheight - fsize*2;
     this.increment = -Math.floor((Math.random()*flyUpMax)+10);
-    this.xincrement = Math.floor((Math.random()*50)+1);
+    this.xincrement = Math.floor((Math.random()*10)+1);
     this.xincrement *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
     this.element = document.createElement('div');
     this.element.innerHTML = face;
@@ -46,10 +47,12 @@ var windowheight = document.documentElement.clientHeight;
 button.addEventListener("click", goB);
 
 function goB() {
-  console.log("hey")
   var fontsize = fsize;
-  var xv = (button.getBoundingClientRect().left + button.clientWidth/2) - (fontsize/2);
-  var yv = (button.getBoundingClientRect().top + button.clientHeight/2) - (fontsize/2);
+  // var xv = (button.getBoundingClientRect().left + button.clientWidth/2) - (fontsize/2);
+  // var yv = (button.getBoundingClientRect().top + button.clientHeight/2) - (fontsize/2);
+  var xv = windowwidth/2;
+  var yv = windowheight/2;
+  
   var fl = button.getBoundingClientRect().top + 100;
   var face = text;
   for (var i = 0; i < 50; i++) {
