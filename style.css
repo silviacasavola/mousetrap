@@ -1,3 +1,27 @@
+/* FONT */
+@font-face {
+  font-family: "Monotypa Corsiva";
+  src: url("assets/fonts/Monotype-Corsiva.ttf");
+  font-weight:normal;
+  font-style: normal;
+  }
+
+
+  @font-face {
+    font-family: "Arialnarrow";
+    src: url("assets/fonts/Arial-Narrow.ttf");
+    font-weight:normal;
+    font-style: normal;
+    }
+
+text {
+  font-family: "Arialnarrow";
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  /* font-size: 0.2vw !important; */
+}
+
 #visualizion-container {
   width: 100%;
   height: 100%;
@@ -46,4 +70,23 @@ body {
 
 .hidden-shape {
   display: none
+}
+
+.header {
+  position: fixed;
+  bottom: 1vw;
+  font-size: 2.5vw;
+  font-family: "Monotype Corsiva";
+  line-height: 2.5vw;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+#title {
+  left: 23%;
+}
+
+#about {
+  right: 20%;
 }
