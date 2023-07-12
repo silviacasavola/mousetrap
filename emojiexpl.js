@@ -2,7 +2,7 @@ function startheart () {
 var flyingMen = [];
 var text = "💔";
 var button = document.getElementById('g15');
-var fsize = "48";
+var fsize = "24";
 var windowheight = document.documentElement.clientHeight;
 var windowwidth = document.documentElement.clientWidth;
 
@@ -52,7 +52,7 @@ function goB() {
   // var yv = (button.getBoundingClientRect().top + button.clientHeight/2) - (fontsize/2);
   var xv = windowwidth/2;
   var yv = windowheight/2;
-  
+
   var fl = button.getBoundingClientRect().top + 100;
   var face = text;
   for (var i = 0; i < 50; i++) {
