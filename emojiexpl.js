@@ -48,10 +48,10 @@ button.addEventListener("click", goB);
 
 function goB() {
   var fontsize = fsize;
-  // var xv = (button.getBoundingClientRect().left + button.clientWidth/2) - (fontsize/2);
-  // var yv = (button.getBoundingClientRect().top + button.clientHeight/2) - (fontsize/2);
-  var xv = windowwidth/2;
-  var yv = windowheight/2;
+  var xv = (button.getBoundingClientRect().left + button.clientWidth/2) - (fontsize/2);
+  var yv = (button.getBoundingClientRect().top + button.clientHeight/2) - (fontsize/2);
+  // var xv = windowwidth/2;
+  // var yv = windowheight/2;
 
   var fl = button.getBoundingClientRect().top + 100;
   var face = text;
