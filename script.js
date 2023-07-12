@@ -14,26 +14,29 @@ d3.svg('assets/prova.svg').then(function(svg) {
 
       $(group).attr("class", "my-group clickable")
 
+      startheart()
+
       if (i !== 1) {
         $(group).addClass("hidden-shape");
       }
 
-        $(group).click(function () {
 
-          if ($(this).hasClass("clickable")) {
+      $(group).click(function () {
 
+      const randomNumber = Math.random();
+      // if (randomNumber < 0.1) {
 
-          $(this).removeClass("clickable");
+      if (i !== 15) {
+      let hiddenarr = mySvg.querySelectorAll(".hidden-shape")
+      let target = hiddenarr[(Math.floor(Math.random() * hiddenarr.length))]
 
-          let hiddenarr = mySvg.querySelectorAll(".hidden-shape")
-          let target = hiddenarr[(Math.floor(Math.random() * hiddenarr.length))]
-
-          $(target).removeClass("hidden-shape").attr("cursor", "pointer")
-        }
-        else
-        {
-          shakeit()
-        }
+      $(target).removeClass("hidden-shape").attr("cursor", "pointer")
+    } 
+      // }
+      // else
+      // {
+      // shakeit()
+      // }
       })
     }
 

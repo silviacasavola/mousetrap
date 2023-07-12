@@ -9,46 +9,44 @@ d3.svg('assets/prova.svg').then(function(svg) {
     for (let i = 1; i <= 16; i++) {
       const groupID = "g" + i;
       const group = mySvg.querySelector("#" + groupID);
+      // let hiddenobjects;
+      // const secondgroup = mySvg.querySelector("#" + secondgroupID);
 
-      const secondgroupID = "g" + (i+1);
-      const secondgroup = mySvg.querySelector("#" + secondgroupID);
-
-      $(group).attr("class", "my-group")
+      $(group).attr("class", "my-group clickable")
+      hearts()
 
       if (i !== 1) {
-        $(group).attr("display", "none")
+        $(group).addClass("hidden-shape");
       }
 
-      if (i < 16) {
-        $(group).click(function () {
-          $(secondgroup).attr("display", "block")
-        })
-      }
-      }
 
-  //   const initialGroups = d3.select("svg")
-  //     .selectAll("g")
-  //     .filter(function() {
-  //       return !d3.select(this).attr("i:extraneous");
-  //     });
-  //
-  // const allGroups = initialGroups.selectAll("g")
-  //   .each(function() {
-  //       const group = d3.select(this);
-  //       const groupID = group.attr("id");
-  //
-  //       if (groupID) {
-  //       group.attr("class", "my-group");
-  //       group.attr("display", "none");
-  //
-  //       if (groupID === "g1") {
-  //         group.attr("display", "block");
-  //       }
-  //     }
-  //   })
+      $(group).click(function () {
 
-    // opacity()
-  })
+      if ($(this).hasClass("clickable")) {
+
+      $(this).removeClass("clickable");
+
+      let hiddenarr = mySvg.querySelectorAll(".hidden-shape")
+      let target = hiddenarr[(Math.floor(Math.random() * hiddenarr.length))]
+
+      $(target).removeClass("hidden-shape").attr("cursor", "pointer")
+      }
+      else
+      {
+      shakeit()
+      }
+      })
+    }
+
+    function shakeit() {
+          mySvg.style.animation = "noise 0.2s infinite";
+
+        setTimeout(() => {
+          mySvg.style.animation = "none";
+        }, 1000);
+    }
+})
+
 
   // COUNTDOWN
 countDownDate =  new Date().getTime() + 65724455;
@@ -92,12 +90,3 @@ function opacity () {
   })
 }
 }
-
-  // console.log(buttonsarray)
-// $("#g1").click(function () {
-//   css("opacity", "1")
-// $("#g2").css("opacity", "1")
-// $("#g3").css("opacity", "1")
-// $("#g4").css("opacity", "1")
-// $("#g5").css("opacity", "1")
-// $("#g6").css("opacity", "1")
