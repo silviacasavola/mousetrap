@@ -41,8 +41,8 @@ d3.selectAll("path").each(function() {
 
       $(group).click(function () {
         if (level === 0 || level === 2 || level === 4) { $(group).click(shownew()) }
-        else if (level === 1) { $(group).click(changecolor())}
-        else if (level === 3) { $(group).click(shakeit()) }
+        else if (level === 1) { $(group).click(shakeit())}
+        else if (level === 3) { $(group).click(changecolor()) }
         else if (level === 5) { $(group).click(goB()) }
       })
     }
