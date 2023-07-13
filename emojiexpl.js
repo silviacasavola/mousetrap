@@ -1,8 +1,7 @@
 // function startheart() {
   var flyingMen = [];
-  emojilist = ["💔", "🤡", "👎", "🚫"]
-  var text = emojilist[Math.floor(Math.random()*emojilist.length)];
-  // var button = document.getElementById('g15');
+  var text = ["💔", "🤡", "👎", "🚫"]
+
   var fsize = "24";
   var windowheight = document.documentElement.clientHeight;
   var windowwidth = document.documentElement.clientWidth;
@@ -50,7 +49,7 @@
     var xv = windowwidth / 2;
     var yv = windowheight / 2;
     var fl = windowheight / 2;
-    var face = text;
+    var face = text[Math.floor(Math.random()*text.length)];
     for (var i = 0; i < 50; i++) {
       var coolGuy = new emoji(face, xv, yv, fl, fontsize, 10);
       flyingMen.push(coolGuy);
