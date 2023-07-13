@@ -1,0 +1,56 @@
+
+	 	   <defs>
+	 			 <filter id='inset-shadow'>
+	 			   <!-- Shadow offset -->
+	 			   <feOffset
+	 			     dx='0'
+	 			     dy='0'
+	 			   />
+
+	 			   <!-- Shadow blur -->
+	 			   <feGaussianBlur
+	 			     stdDeviation='10'
+	 			     result='offset-blur'
+	 			   />
+
+	 			   <!-- Invert drop shadow to make an inset shadow -->
+	 			   <feComposite
+	 			     operator='out'
+	 			     in='SourceGraphic'
+	 			     in2='offset-blur'
+	 			     result='inverse'
+	 			   />
+
+	 			   <!-- Cut color inside shadow -->
+	 			   <feFlood
+	 			     flood-color='black'
+	 			     flood-opacity='.97'
+	 			     result='color'
+	 			   />
+	 			   <feComposite
+	 			     operator='in'
+	 			     in='color'
+	 			     in2='inverse'
+	 			     result='shadow'
+	 			   />
+
+	 			   <!-- Placing shadow over element -->
+	 			   <feComposite
+	 			     operator='over'
+	 			     in='shadow'
+	 			     in2='SourceGraphic'
+	 			   />
+	 			 </filter>
+
+
+	 				 <filter id='inset-shadow2'>
+	 					 <feComponentTransfer in="shadow" result="luminosity">
+	         <feFuncR type="linear" slope="0.8" intercept="0" />
+	         <feFuncG type="linear" slope="0.8" intercept="0" />
+	         <feFuncB type="linear" slope="0.8" intercept="0" />
+	       </feComponentTransfer>
+
+	       <!-- Combine modified luminosity with the element -->
+	       <feComposite operator="over" in="luminosity" in2="SourceGraphic" />
+	     </filter>
+	 	   </defs>

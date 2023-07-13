@@ -6,13 +6,21 @@ d3.svg('assets/prova.svg').then(function(svg) {
 
   container.node().appendChild(mySvg);
 
+d3.selectAll("svg").attr("class", "blurred");
+
+    d3.selectAll("path")
+    .each(function() {
+      d3.select(this).classed("my-filter", true);
+    });
+
     for (let i = 1; i <= 16; i++) {
       const groupID = "g" + i;
       const group = mySvg.querySelector("#" + groupID);
       // let hiddenobjects;
       // const secondgroup = mySvg.querySelector("#" + secondgroupID);
 
-      $(group).attr("class", "my-group clickable")
+      $(group).attr("class", "my-group")
+
 
       startheart()
 
@@ -31,7 +39,7 @@ d3.svg('assets/prova.svg').then(function(svg) {
       let target = hiddenarr[(Math.floor(Math.random() * hiddenarr.length))]
 
       $(target).removeClass("hidden-shape").attr("cursor", "pointer")
-    } 
+    }
       // }
       // else
       // {
@@ -70,25 +78,4 @@ var x = setInterval(function() {
   document.getElementById("countdown").innerHTML = "00:" + hours + ":"
   + minutes + ":" + seconds;
 }, 1000)
-}
-
-let buttonsarray = [];
-let first;
-let second;
-let fistobj;
-
-function opacity () {
-  for (i = 1; i < 16; i++) {
-  buttonsarray = '#' + i;
-  // first = '$("#' + i + '")';
-  second = '$("#' + (i+1) + '")';
-
-  console.log($(buttonsarray))
-
-  $(buttonsarray).click(function () {
-    console.log(i)
-  // console.log(first + second)
-  // $("#" + second).css("display", "block")
-  })
-}
 }

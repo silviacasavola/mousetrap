@@ -20,16 +20,32 @@
       <!-- ******************* Utilities ******************* -->
       <!-- Javascript libraries -->
       <!-- d3.js -->
-      <div id="title" class="header">Mouse Trap</div>
-      <div id="about" class="header">About</div>
+      <div id="title" class="title footer blurred">Mouse Trap</div>
+      <div id="about" class="title footer blurred">About</div>
+
+      <div id="intro-container">
+        <div id="intro-overlay"></div>
+      <div id="intro-message">
+        <div class="title">Mouse Trap</div>
+
+        <div class="outer">
+          <div class="drop-point"></div>
+        <div class="inner"></div>
+      </div>
+
+        <div id="unlock">drag to unlock the stress</div>
+      </div>
+    </div>
       <script src="https://d3js.org/d3.v7.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
 
       <!-- jQuery and Popper. They are required by Bootstrap, we discourage using jQuery -->
-      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
       <!-- Bootstrap -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
       <!-- Your js file -->
+      <script src="intro.js"></script>
       <script src="script.js"></script>
       <script src="emojiexpl.js"></script>
   </body>
