@@ -40,12 +40,14 @@ d3.selectAll("path").each(function() {
 
 
       $(group).click(function () {
+        if (i !== 9) {
         if (level === 0 || level === 2 || level === 4) { $(group).click(shownew()) }
         else if (level === 1) { $(group).click(shakeit())}
         else if (level === 3) { $(group).click(changecolor()) }
         else if (level === 5) { $(group).click(goB()) }
-      })
-    }
+    } else { darkmode() }
+  })
+}
 
 // SHOW NEW !!!
 
@@ -107,6 +109,14 @@ var x = setInterval(function() {
   document.getElementById("countdown").innerHTML = "00:" + hours + ":"
   + minutes + ":" + seconds;
 }, 1000)
+}
+
+function darkmode() {
+  $("body").addClass("dark-mode");
+
+  setTimeout(() => {
+  $("body").removeClass("dark-mode")
+}, 3000);
 }
 
 // rosso: 7

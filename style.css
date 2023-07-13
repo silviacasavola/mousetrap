@@ -90,7 +90,18 @@ body {
   padding: var(--margin);
   overflow: hidden;
   background-color: var(--grey);
+  color: black;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
+
+body.dark-mode {
+  background-color: #333638;
+  color: white;
+}
+
+/* body.dark-mode .footer {
+  color: white;
+} */
 
 .hidden-shape {
   display: none
@@ -155,7 +166,7 @@ body {
   /* margin: 20px auto; */
   padding: 20px;
   border-radius: 5vh;
-  margin: var(--margin);
+  padding:calc(var(--margin)/4);
   background-color: #444;
   box-shadow: inset 0 0 2em black;
 }
