@@ -22,5 +22,5 @@ function land ( event, ui ) {
   setTimeout(() => {
   $(".blurred").css("filter", "none")
   $("#intro-container").css("display", "none")
-}, 1000);
+}, 700);
 }
