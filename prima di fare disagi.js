@@ -16,11 +16,13 @@ d3.selectAll("svg").attr("class", "blurred");
     for (let i = 1; i <= 16; i++) {
       const groupID = "g" + i;
       const group = mySvg.querySelector("#" + groupID);
+      // let hiddenobjects;
+      // const secondgroup = mySvg.querySelector("#" + secondgroupID);
 
       $(group).attr("class", "my-group")
 
 
-      // startheart()
+      startheart()
 
       if (i !== 1) {
         $(group).addClass("hidden-shape");
@@ -29,28 +31,21 @@ d3.selectAll("svg").attr("class", "blurred");
 
       $(group).click(function () {
 
-      const randomNum = Math.random();
+      const randomNumber = Math.random();
+      // if (randomNumber < 0.1) {
 
-      if (i === 1) { shownew()}
+      if (i !== 15) {
+      let hiddenarr = mySvg.querySelectorAll(".hidden-shape")
+      let target = hiddenarr[(Math.floor(Math.random() * hiddenarr.length))]
 
-      else {
-
-      if (randomNum < 0.3) { shownew() }
-
-      if (randomNum >= 0.3 && randomNum < 0.6) { goB() }
-
-      if (randomNum >= 0.6 && randomNum < 0.9) { shakeit() }
-
-      }
-
-      })
+      $(target).removeClass("hidden-shape").attr("cursor", "pointer")
     }
-
-    function shownew() {
-    let hiddenarr = mySvg.querySelectorAll(".hidden-shape")
-    let target = hiddenarr[(Math.floor(Math.random() * hiddenarr.length))]
-
-    $(target).removeClass("hidden-shape").attr("cursor", "pointer")
+      // }
+      // else
+      // {
+      // shakeit()
+      // }
+      })
     }
 
     function shakeit() {
@@ -83,8 +78,4 @@ var x = setInterval(function() {
   document.getElementById("countdown").innerHTML = "00:" + hours + ":"
   + minutes + ":" + seconds;
 }, 1000)
-}
-
-function changecolor() {
-
 }

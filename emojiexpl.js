@@ -1,7 +1,7 @@
-function startheart() {
+// function startheart() {
   var flyingMen = [];
   var text = "💔";
-  var button = document.getElementById('g15');
+  // var button = document.getElementById('g15');
   var fsize = "24";
   var windowheight = document.documentElement.clientHeight;
   var windowwidth = document.documentElement.clientWidth;
@@ -42,13 +42,13 @@ function startheart() {
     }
   }
 
-  button.addEventListener("click", goB);
+  // button.addEventListener("click", goB);
 
   function goB() {
     var fontsize = fsize;
     var xv = windowwidth / 2;
     var yv = windowheight / 2;
-    var fl = button.getBoundingClientRect().top + 100;
+    var fl = windowheight / 2;
     var face = text;
     for (var i = 0; i < 50; i++) {
       var coolGuy = new emoji(face, xv, yv, fl, fontsize, 10);
@@ -77,4 +77,4 @@ function startheart() {
       requestAnimationFrame(render);
     }
   }
-}
+// }
