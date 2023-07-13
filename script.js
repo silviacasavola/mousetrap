@@ -45,16 +45,6 @@ d3.selectAll("path").each(function() {
         else if (level === 3) { $(group).click(shakeit()) }
         else if (level === 5) { $(group).click(goB()) }
       })
-
-      // if (level === 0) { $(group).click(shownew()) }
-      //
-      // if (level === 1) { $(group).click(changecolor()) }
-      //
-      // if (level === 2) { $(group).click(shakeit()) }
-      //
-      // if (level === 3) { $(group).click(goB()) }
-
-      console.log(level)
     }
 
 // SHOW NEW !!!
