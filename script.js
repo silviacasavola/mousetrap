@@ -1,6 +1,6 @@
 var level = 0;
 
-d3.svg('assets/prova.svg').then(function(svg) {
+d3.svg('assets/graphics.svg').then(function(svg) {
   let mySvg = svg.documentElement;
   let container = d3.select("#visualization-container");
 
