@@ -171,3 +171,7 @@ body {
 .success {
   background-color: #22EC73;
 }
+/*
+.my-filter {
+  fill: var(--random-color)
+} */

@@ -8,10 +8,23 @@ d3.svg('assets/prova.svg').then(function(svg) {
 
 d3.selectAll("svg").attr("class", "blurred");
 
-    d3.selectAll("path")
-    .each(function() {
-      d3.select(this).classed("my-filter", true);
-    });
+let shapes;
+let color;
+let colors = [];
+
+d3.selectAll("path").each(function() {
+  if (d3.select(this).classed("st7") || d3.select(this).classed("st4") || d3.select(this).classed("st0") || d3.select(this).classed("st5") || d3.select(this).classed("st13")) {
+    shapes = d3.select(this);
+    d3.select(this).classed("my-filter", true);
+
+      let color = d3.select(this).style('fill');
+      if (color !== "rgb(255, 255, 255)") {
+        d3.select(this).classed("coloured-shapes", true);
+        colors.push(color);
+      }
+    }
+  });
+
 
     for (let i = 1; i <= 16; i++) {
       const groupID = "g" + i;
@@ -35,16 +48,28 @@ d3.selectAll("svg").attr("class", "blurred");
 
       else {
 
-      if (randomNum < 0.3) { shownew() }
+      if (randomNum <= 0.25) {
+      shownew()
+    }
 
-      if (randomNum >= 0.3 && randomNum < 0.6) { goB() }
+      if (randomNum > 0.25 && randomNum <= 0.5) {
+        changecolor()
+       }
 
-      if (randomNum >= 0.6 && randomNum < 0.9) { shakeit() }
+      if (randomNum > 0.5 && randomNum <= 0.75) {
+        shakeit()
+      }
+
+      if (randomNum > 0.75) {
+        goB()
+      }
 
       }
 
       })
     }
+
+// SHOW NEW !!!
 
     function shownew() {
     let hiddenarr = mySvg.querySelectorAll(".hidden-shape")
@@ -53,12 +78,28 @@ d3.selectAll("svg").attr("class", "blurred");
     $(target).removeClass("hidden-shape").attr("cursor", "pointer")
     }
 
+// SHAKE IT !!!
+
     function shakeit() {
           mySvg.style.animation = "noise 0.2s infinite";
 
         setTimeout(() => {
           mySvg.style.animation = "none";
         }, 1000);
+    }
+
+// CHANGE COLOR
+
+  function changecolor() {
+
+    d3.selectAll(".coloured-shapes").each(function () {
+
+    this.classed("randomized-shapes", true)
+
+    let randomcolor = randomColor = colors[Math.floor(Math.random() * colors.length)];
+    console.log(randomcolor)
+    d3.selectAll(".randomized-shapes").style.fill = randomColor;
+      })
     }
 })
 
@@ -83,8 +124,4 @@ var x = setInterval(function() {
   document.getElementById("countdown").innerHTML = "00:" + hours + ":"
   + minutes + ":" + seconds;
 }, 1000)
-}
-
-function changecolor() {
-
 }
