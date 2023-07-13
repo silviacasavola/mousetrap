@@ -40,7 +40,7 @@ $("#about").click(function() {
   if (aboutclose) {
   aboutclose = false;
   $("#about-container").removeClass("closed");
-  $("svg").css("filter", "blur(5px)");
+  $("#try").css("filter", "blur(5px)");
   setTimeout(() => {
   $("#about-container").css("opacity", 1)
 }, 100);
@@ -49,7 +49,7 @@ $("#about").click(function() {
 
 $("#about-container").css("opacity", 0)
 aboutclose = true;;
-$("svg").css("filter", "none");
+$("#try").css("filter", "none");
 setTimeout(() => {
 $("#about-container").addClass("closed")
 }, 100);
