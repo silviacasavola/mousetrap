@@ -1,3 +1,6 @@
+let entered = false;
+let aboutclose = true;
+
 $('.inner').draggable({
   containment: 'parent',
   cursor: 'move',
@@ -14,6 +17,8 @@ function land ( event, ui ) {
   ui.draggable.draggable( 'disable' );
   ui.draggable.position({of: $(this), my: 'left', at: 'left'});
   ui.draggable.draggable( 'option', 'revert', false );
+  entered = true;
+
 
   setTimeout(() => {
   $("#intro-container").css("opacity", "0")
@@ -23,8 +28,32 @@ function land ( event, ui ) {
   $(".blurred").css("filter", "none")
   $("#intro-container").css("display", "none")
 }, 700);
+
+if (entered === true) {
+$("#about").css("cursor", "pointer")
+}
 }
 
-$("#about").click(function () {
-  $("#about-container").toggleClass("closed")
+$("#about").click(function() {
+  if (entered) {
+
+  if (aboutclose) {
+  aboutclose = false;
+  $("#about-container").removeClass("closed");
+  $("svg").css("filter", "blur(5px)");
+  setTimeout(() => {
+  $("#about-container").css("opacity", 1)
+}, 100);
+
+} else {
+
+$("#about-container").css("opacity", 0)
+aboutclose = true;;
+$("svg").css("filter", "none");
+setTimeout(() => {
+$("#about-container").addClass("closed")
+}, 100);
+}
+
+}
 })
