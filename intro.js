@@ -24,3 +24,7 @@ function land ( event, ui ) {
   $("#intro-container").css("display", "none")
 }, 700);
 }
+
+$("#about").click(function () {
+  $("#about-container").toggleClass("closed")
+})
