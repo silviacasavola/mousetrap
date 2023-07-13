@@ -43,7 +43,7 @@ $("#about").click(function() {
   $("#try").css("filter", "blur(5px)");
   setTimeout(() => {
   $("#about-container").css("opacity", 1)
-}, 100);
+}, 10);
 
 } else {
 
@@ -52,7 +52,7 @@ aboutclose = true;;
 $("#try").css("filter", "none");
 setTimeout(() => {
 $("#about-container").addClass("closed")
-}, 100);
+}, 500);
 }
 
 }
