@@ -56,6 +56,7 @@
     }
     document.getElementById("emoji-container").style.display = "block";
     render(); // Start the animation loop after adding emojis
+
   }
 
   function render() {
@@ -73,6 +74,7 @@
 
     if (!isAnyAlive) {
       document.getElementById("emoji-container").style.display = "none";
+      level = 0;
     } else {
       requestAnimationFrame(render);
     }

@@ -1,5 +1,3 @@
-var level = 0;
-
 d3.svg('assets/prova.svg').then(function(svg) {
   let mySvg = svg.documentElement;
   let container = d3.select("#visualization-container");
@@ -34,27 +32,41 @@ d3.selectAll("path").each(function() {
 
       $(group).attr("class", "my-group")
 
+
+      // startheart()
+
       if (i !== 1) {
         $(group).addClass("hidden-shape");
       }
 
 
       $(group).click(function () {
-        if (level === 0 || level === 2 || level === 4) { $(group).click(shownew()) }
-        else if (level === 1) { $(group).click(changecolor())}
-        else if (level === 3) { $(group).click(shakeit()) }
-        else if (level === 5) { $(group).click(goB()) }
+
+      const randomNum = Math.random();
+
+      if (i === 1) { shownew()}
+
+      else {
+
+      if (randomNum <= 0.25) {
+      shownew()
+    }
+
+      if (randomNum > 0.25 && randomNum <= 0.5) {
+        changecolor()
+       }
+
+      if (randomNum > 0.5 && randomNum <= 0.75) {
+        shakeit()
+      }
+
+      if (randomNum > 0.75) {
+        goB()
+      }
+
+      }
+
       })
-
-      // if (level === 0) { $(group).click(shownew()) }
-      //
-      // if (level === 1) { $(group).click(changecolor()) }
-      //
-      // if (level === 2) { $(group).click(shakeit()) }
-      //
-      // if (level === 3) { $(group).click(goB()) }
-
-      console.log(level)
     }
 
 // SHOW NEW !!!
@@ -64,8 +76,6 @@ d3.selectAll("path").each(function() {
     let target = hiddenarr[(Math.floor(Math.random() * hiddenarr.length))]
 
     $(target).removeClass("hidden-shape").attr("cursor", "pointer")
-
-    level++;
     }
 
 // SHAKE IT !!!
@@ -76,13 +86,12 @@ d3.selectAll("path").each(function() {
         setTimeout(() => {
           mySvg.style.animation = "none";
         }, 1000);
-
-      level++
     }
 
 // CHANGE COLOR
 
   function changecolor() {
+
 
     d3.selectAll(".coloured-shapes").each(function () {
       if (d3.select(this).classed("recolored")) {
@@ -91,8 +100,6 @@ d3.selectAll("path").each(function() {
         d3.select(this).classed("recolored", true)
       }
     })
-
-    level++
 }
 })
 
