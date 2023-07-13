@@ -1,6 +1,7 @@
 // function startheart() {
   var flyingMen = [];
-  var text = "💔";
+  emojilist = ["💔", "🤡", "👎", "🚫"]
+  var text = emojilist[Math.floor(Math.random()*emojilist.length)];
   // var button = document.getElementById('g15');
   var fsize = "24";
   var windowheight = document.documentElement.clientHeight;

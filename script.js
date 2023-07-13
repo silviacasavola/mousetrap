@@ -13,7 +13,7 @@ let color;
 let colors = [];
 
 d3.selectAll("path").each(function() {
-  if (d3.select(this).classed("st7") || d3.select(this).classed("st4") || d3.select(this).classed("st0") || d3.select(this).classed("st5") || d3.select(this).classed("st13")) {
+  if (d3.select(this).classed("st7") || d3.select(this).classed("st5") || d3.select(this).classed("st4") || d3.select(this).classed("st0") || d3.select(this).classed("st6") || d3.select(this).classed("st13")) {
     shapes = d3.select(this);
     d3.select(this).classed("my-filter", true);
 
@@ -92,15 +92,15 @@ d3.selectAll("path").each(function() {
 
   function changecolor() {
 
+
     d3.selectAll(".coloured-shapes").each(function () {
-
-    this.classed("randomized-shapes", true)
-
-    let randomcolor = randomColor = colors[Math.floor(Math.random() * colors.length)];
-    console.log(randomcolor)
-    d3.selectAll(".randomized-shapes").style.fill = randomColor;
-      })
-    }
+      if (d3.select(this).classed("recolored")) {
+        d3.select(this).classed("recolored", false)
+      } else {
+        d3.select(this).classed("recolored", true)
+      }
+    })
+}
 })
 
 
@@ -125,3 +125,9 @@ var x = setInterval(function() {
   + minutes + ":" + seconds;
 }, 1000)
 }
+
+// rosso: 7
+// blu: 5
+// viola: 0
+// giallo: 6
+// verde: 4

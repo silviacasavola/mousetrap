@@ -6,6 +6,12 @@
 
   --font-size: 5vw;
   --grey: #97a0aa;
+
+  --purple: #D131EA;
+  --green: #5BE56F;
+  --blue: #4086FF;
+  --yellow: #DCEB00;
+  --red: #D131EA;
 }
 
 /* FONT */
@@ -175,3 +181,10 @@ body {
 .my-filter {
   fill: var(--random-color)
 } */
+
+/* COLORI VARIATI */
+	.st0.recolored {fill: var(--green);}
+	.st4.recolored {fill: var(--yellow);}
+	.st5.recolored {fill: var(--red)}
+	.st6.recolored {fill: var(--purple);}
+	.st7.recolored {fill: var(--blue);}
