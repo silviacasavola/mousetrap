@@ -182,7 +182,7 @@ body.dark-mode {
   margin: calc(var(--margin)/2) auto;
   border-radius: 5vh;
   padding:calc(var(--margin)/3);
-  background-color: var(--blue);
+  background-color: var(--yellow);
     /* background-color: #444; */
   box-shadow: inset 0 0 20px var(--dark-grey);
 }
@@ -191,10 +191,10 @@ body.dark-mode {
   height: 100%;
   width: 6vw;
   /* background-color: white; */
-  background-color: var(--purple);
+  background-color: white;
   border-radius: 5vh;
   cursor: pointer;
-box-shadow: 0 0 20px var(--grey);
+box-shadow: inset 0 0 20px var(--grey);
 }
 
 .drop-point {
