@@ -41,10 +41,10 @@ d3.selectAll("path").each(function() {
 
       $(group).click(function () {
         if (i !== 9) {
-        if (level === 0 || level === 2 || level === 4) { $(group).click(shownew()) }
+        if (level === 0 || level === 2 || level === 3 || level === 5) { $(group).click(shownew()) }
         else if (level === 1) { $(group).click(shakeit())}
-        else if (level === 3) { $(group).click(changecolor()) }
-        else if (level === 5) { $(group).click(goB()) }
+        else if (level === 4) { $(group).click(changecolor()) }
+        else if (level === 6) { $(group).click(goB()) }
     } else { darkmode() }
   })
 }
